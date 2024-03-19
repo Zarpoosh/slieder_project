@@ -13,12 +13,17 @@ body {
 }
 
 .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
   position: relative;
-  width: 200px;
-  height: 300px;
+  width: 13rem;
+  height: 20rem;
   transform-style: preserve-3d;
   animation: animate 40s linear infinite;
 }
+
 
 .box span {
   position: absolute;
@@ -28,10 +33,29 @@ body {
   height: 100%;
   transform-origin: center;
   transform-style: preserve-3d;
-  transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(310px);
   -webkit-box-reflect: below 0px
   linear-gradient(transparent, transparent, #0004);
 }
+@media only screen and (max-width: 600px) {
+  .box{
+   background-color: blue;
+   width: 6rem;
+   height: 10rem;
+  }
+  .box span{
+   transform: rotateY(calc(var(--i) * 45deg)) translateZ(200px);
+ }
+ }
+ @media only screen and (max-width: 397px){
+   .box{
+     width: 6rem;
+   height: 12rem;
+   }
+   .box span{
+     transform: rotateY(calc(var(--i) * 45deg)) translateZ(120px);
+   }
+ }
 
 .box span img {
   position: absolute;
